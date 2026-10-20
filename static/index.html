@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow AI - Smart Task Organizer</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="navbar">
+            <div class="logo">
+                <div class="logo-icon">✦</div>
+                <span>TaskFlow <span class="gradient-text">AI</span></span>
+            </div>
+            <div class="status">
+                <span class="status-dot"></span>
+                AI Task Assistant
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <span class="eyebrow">Your personal productivity assistant</span>
+                <h1>Less chaos.<br><span class="gradient-text">More clarity.</span></h1>
+                <p>Write down your tasks and let AI organize them by priority.</p>
+            </section>
+
+            <section class="workspace">
+                <div class="card">
+                    <h2>✍️ Brain dump</h2>
+                    <p class="card-description">Write everything you need to do.</p>
+
+                    <form id="task-form">
+                        <label for="task-input">What's on your mind?</label>
+                        <textarea id="task-input" maxlength="5000"
+                            placeholder="Study Python today, finish my assignment tomorrow..."
+                            required></textarea>
+
+                        <div class="examples">
+                            <button class="example-btn" type="button"
+                                data-example="Study Python today, finish my assignment tomorrow, and organize my desk this weekend.">
+                                📚 Student day
+                            </button>
+                            <button class="example-btn" type="button"
+                                data-example="Prepare my presentation by tomorrow and reply to emails today.">
+                                💼 Work mode
+                            </button>
+                        </div>
+
+                        <button class="primary-btn" id="submit-btn" type="submit">
+                            ✦ <span id="button-text">Organize my tasks</span> →
+                        </button>
+                    </form>
+
+                    <div class="loading" id="loading">AI is organizing your tasks...</div>
+                    <div class="error-message" id="error-message" role="alert"></div>
+                </div>
+
+                <div class="card">
+                    <div class="result-header">
+                        <div>
+                            <h2>📋 Your task list</h2>
+                            <div class="task-count" id="task-count">Your organized day starts here</div>
+                        </div>
+                    </div>
+
+                    <div class="task-list" id="task-list" aria-live="polite">
+                        <div class="empty-state">
+                            <div class="empty-icon">✧</div>
+                            <strong>Your clarity starts here</strong>
+                            <p>Your organized tasks will appear here.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            Made with <span>♥</span> and AI magic · TaskFlow AI
+        </footer>
+    </div>
+
+    <script src="/static/script.js" defer></script>
+</body>
+</html>
